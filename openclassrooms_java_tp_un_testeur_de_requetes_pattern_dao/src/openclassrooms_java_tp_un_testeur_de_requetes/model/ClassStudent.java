@@ -3,17 +3,17 @@ package openclassrooms_java_tp_un_testeur_de_requetes.model;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Class {
+public class ClassStudent {
 	private int id = 0;
 	private String name = "";
 	private Set<Professor> listProfesseur = new HashSet<Professor>();
 	private Set<Student> listEleve = new HashSet<Student>();
 
 	// CONSTRUCTEUR par defaut
-	public Class() {}
+	public ClassStudent() {}
 
 	// CONSTRUCTEUR
-	public Class(int id, String name) {
+	public ClassStudent(int id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -42,7 +42,7 @@ public class Class {
 	}
 
 	// Comparer l'id de la classe
-	public boolean equals(Class cls){
+	public boolean equals(ClassStudent cls){
 		return this.getId() == cls.getId();
 	}
 	

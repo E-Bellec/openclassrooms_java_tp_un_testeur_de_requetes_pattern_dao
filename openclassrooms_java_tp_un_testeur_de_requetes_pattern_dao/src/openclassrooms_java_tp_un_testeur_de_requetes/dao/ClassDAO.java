@@ -4,27 +4,27 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import openclassrooms_java_tp_un_testeur_de_requetes.model.Class;
+import openclassrooms_java_tp_un_testeur_de_requetes.model.ClassStudent;
 
-public class ClassDAO extends DAO<Class> {
+public class ClassDAO extends DAO<ClassStudent> {
 	public ClassDAO(Connection conn) {
 		super(conn);
 	}
 
-	public boolean create(Class obj) {
+	public boolean create(ClassStudent obj) {
 		return false;
 	}
 
-	public boolean delete(Class obj) {
+	public boolean delete(ClassStudent obj) {
 		return false;
 	}
 	 
-	public boolean update(Class obj) {
+	public boolean update(ClassStudent obj) {
 		return false;
 	}
 
-	public Class find(int id) {
-		Class classStudent = new Class();
+	public ClassStudent find(int id) {
+		ClassStudent classStudent = new ClassStudent();
 		try {
 			ResultSet result = this.connect.createStatement(
 				ResultSet.TYPE_SCROLL_INSENSITIVE, 
@@ -32,7 +32,7 @@ public class ClassDAO extends DAO<Class> {
 			).executeQuery("SELECT * FROM classe WHERE cls_id = " + id); 
 
 			if(result.first()){
-				classStudent = new Class(id, result.getString("cls_nom"));
+				classStudent = new ClassStudent(id, result.getString("cls_nom"));
 
 				result = this.connect.createStatement().executeQuery(
 					"SELECT prof_id, prof_nom, prof_prenom from professeur " +
